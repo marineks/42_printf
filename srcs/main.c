@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 14:04:53 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/08/02 17:30:20 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/08/02 17:41:09 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,49 +121,82 @@ int	main(void)
 	printf("          Tests for \%i          ");
 	printf("---------------------------------\nMa fonction :");
 	int int_test5 = 0;
-	ft_printf("%d\n", int_test);
+	ft_printf("%i\n", int_test);
 	printf("Vraie fonction :");
-	printf("%d\n", int_test);
+	printf("%i\n", int_test);
 	printf("---------------------------------\nMa fonction :");
 	int *int_test6 = 42;
-	ft_printf("%d\n", int_test2);
+	ft_printf("%i\n", int_test2);
 	printf("Vraie fonction :");
-	printf("%d\n", int_test2);
+	printf("%i\n", int_test2);
 	printf("---------------------------------\nMa fonction :");
 	int *int_test7 = -1;
-	ft_printf("%d\n", int_test3);
+	ft_printf("%i\n", int_test3);
 	printf("Vraie fonction :");
-	printf("%d\n", int_test3);
+	printf("%i\n", int_test3);
 	printf("---------------------------------\nMa fonction :");
 	int *int_test8 = INT_MAX;
-	ft_printf("%d\n", int_test4);
+	ft_printf("%i\n", int_test4);
 	printf("Vraie fonction :");
-	printf("%d\n", int_test4);
+	printf("%i\n", int_test4);
 	printf("---------------------------------");
+
 
 	printf("---------------------------------");
 	printf("          Tests for \%u          ");
 	printf("---------------------------------\nMa fonction :");
-	int int_test5 = 0;
-	ft_printf("%d\n", int_test);
+	int int_test9 = 0;
+	ft_printf("%u\n", int_test9);
 	printf("Vraie fonction :");
-	printf("%d\n", int_test);
+	printf("%u\n", int_test9);
 	printf("---------------------------------\nMa fonction :");
-	int *int_test6 = 42;
-	ft_printf("%d\n", int_test2);
+	int *int_test10 = 42;
+	ft_printf("%u\n", int_test10);
 	printf("Vraie fonction :");
-	printf("%d\n", int_test2);
+	printf("%d\n", int_test10);
 	printf("---------------------------------\nMa fonction :");
-	int *int_test7 = -1;
-	ft_printf("%d\n", int_test3);
+	int *int_test11 = -1;				// Error message expected
+	ft_printf("%u\n", int_test11);
 	printf("Vraie fonction :");
-	printf("%d\n", int_test3);
+	printf("%u\n", int_test11);
 	printf("---------------------------------\nMa fonction :");
-	int *int_test8 = INT_MAX;
-	ft_printf("%d\n", int_test4);
+	int *int_test12 = INT_MAX;
+	ft_printf("%u\n", int_test12);
 	printf("Vraie fonction :");
-	printf("%d\n", int_test4);
+	printf("%u\n", int_test12);
 	printf("---------------------------------");
 
+	printf("---------------------------------");
+	printf("          Tests for \%x          ");
+	printf("---------------------------------\nMa fonction :");
+	int int_test13 = 0;					// Expected : 0 (base 16)
+	ft_printf("%x\n", int_test13);
+	printf("Vraie fonction :");
+	printf("%x\n", int_test13);
+	printf("---------------------------------\nMa fonction :");
+	int *int_test14 = 42;				// Expected : 2A (base 16)
+	ft_printf("%x\n", int_test14);
+	printf("Vraie fonction :");
+	printf("%x\n", int_test14);
+	printf("---------------------------------\nMa fonction :");
+	int *int_test15 = INT_MIN;			// Expected : -80000000 (base 16)
+	ft_printf("%x\n", int_test15);
+	printf("Vraie fonction :");
+	printf("%x\n", int_test15);
+	printf("---------------------------------\nMa fonction :");
+	int *int_test16 = INT_MAX;			// Expected : 7FFFFFFF (base 16)
+	ft_printf("%x\n", int_test16);
+	printf("Vraie fonction :");
+	printf("%x\n", int_test16);
+	printf("---------------------------------");
+
+
+	printf("---------------------------------");
+	printf("          Tests for \%\%         ");
+	printf("---------------------------------\nMa fonction :");
+	ft_printf("%%\n");
+	printf("Vraie fonction :");
+	printf("%%\n");
+	printf("---------------------------------");
 	return (0);
 }
