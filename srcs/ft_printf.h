@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 14:02:39 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/08/03 14:50:26 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/08/03 18:26:23 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,16 @@
 # define	TRUE 0
 # define	FALSE 1 
 
-# include "libft.h"
+# include "../libft/libft.h"
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
 # include <stdio.h>
+# include <limits.h>
 
 int ft_printf(const char *, ...);
-
+void	parse_flags(char flag, va_list args_lst);
+void	print_percentage(void);
+void	print_character(va_list arg);
 #endif
