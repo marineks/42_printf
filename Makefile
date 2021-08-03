@@ -6,52 +6,57 @@
 #    By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/02 14:46:18 by msanjuan          #+#    #+#              #
-#    Updated: 2021/08/02 14:46:20 by msanjuan         ###   ########.fr        #
+#    Updated: 2021/08/03 16:00:43 by msanjuan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = // METTRE LES SRCS ICI
-
-
+# /* ~~~~~~ SOURCES ~~~~~~ */
+SRCS_DIR= srcs
+SRCS = $(filter-out ${SRCS_DIR}/main.c, $(wildcard ${SRCS_DIR}/*.c))
 OBJS = ${SRCS:.c=.o}
 
-BOBJS = ${BONUS:.c=.o}
+# /* ~~~~~~~ INCLUDING LIBFT ~~~~~~~ */
+LIBFT_DIR = libft
+LIBFT_MAKE = Makefile
+LIBFT_PATH = ${LIBFT_DIR}/libft.a
 
-NAME = libftprintf.a
-
+# /* ~~~~~~~ COMPILING INFO ~~~~~~~ */
 CC = gcc
+CFLAGS = -Wall -Werror -Wextra -I ${LIBFT_DIR}
 
-CFLAGS = -Wall -Werror -Wextra
-
-CREATE = ar rcs
-
+# /* ~~~~~~~ OTHER ~~~~~~~ */
+NAME = libftprintf.a
+CREATE_LIB = ar rcs
 RM = rm -f
 
 .c.o:
-		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}				
-
-${NAME}: ${OBJS}
-		@echo "Creating the lib for printf wih the .o files..."
-		${CREATE} ${NAME} ${OBJS}
-
-run:	all
-		@echo "Compiling and running the files..."
-		${CC} ${CFLAGS} -I. -L. -lft
-		
-
-bonus:	${OBJS} ${BOBJS}
-		@echo "Creating the lib printf wih the .o bonus files..."
-		${CREATE} ${NAME} ${OBJS} ${BOBJS}
-		@touch bonus
+		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}	
 
 all:	${NAME}
 
+${NAME}: ${OBJS} ${LIBFT_DIR}
+		@echo "Creating the lib for printf wih the .o files..."
+		${CREATE_LIB} ${NAME} ${OBJS}
+		
+
+${LIBFT_DIR}: 
+				@echo "Calling make in sub directory libft..."
+				@make -s -C ${LIBFT_DIR} -f ${LIBFT_MAKE} all
+				@cp ${LIBFT_PATH} ${NAME}
+
+run_tests:	all
+		@echo "Compiling and running the files..."
+		${CC} ${CFLAGS} main.c -I. -L. -lft
+		./a.out
+
 clean:
-		${RM} ${OBJS} ${BOBJS} ${NAME} bonus
+		${RM} ${OBJS} ${NAME} a.out
+		make -C ${LIBFT_DIR} -f ${LIBFT_MAKE} clean
 
 fclean: clean
-		${RM} ${OBJS} ${BOBJS} ${NAME} bonus
+		${RM} ${OBJS} ${NAME} a.out
+		make -C ${LIBFT_DIR} -f ${LIBFT_MAKE} clean
 
-re: 	fclean run
+re: 	fclean all
 
-.PHONY: all clean fclean re run bonus
+.PHONY: all clean fclean re run_tests make ${LIBFT_DIR}
