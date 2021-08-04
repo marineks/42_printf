@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 14:46:14 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/08/03 18:38:49 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/08/04 04:35:48 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int ft_printf(const char *flag_lst, ...)
 		if (flag_lst[i] == '%')
 		{
 			parse_flags(flag_lst[i + 1], args_lst);
-			i = i + 2;
+			i++;
 		} 
 		else 
 			write(1, &(flag_lst[i]), 1);
@@ -38,23 +38,5 @@ int ft_printf(const char *flag_lst, ...)
 	}
 	write(1, "\n", 1);
 	va_end(args_lst);
-	return (0);
-}
-
-int	main(void)
-{
-	printf("---------------------------------\n");
-	printf("          Tests for %%c          \n");
-	printf("---------------------------------\n");
-	ft_printf("Test %c\n", 'o');
-	// printf("Vraie fonction : ");
-	printf("Test %c\n", 'o');
-
-	printf("---------------------------------\n");
-	printf("          Tests for %%%%         \n");
-	printf("---------------------------------\n");
-	ft_printf("Test %%");
-	// printf("Vraie fonction : ");
-	printf("Test %%\n");
 	return (0);
 }
