@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 14:04:53 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/08/04 06:05:24 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/08/04 09:46:19 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,14 @@ int	main(void)
 	printf("---------------------------------\n");
 	printf("          Tests for %%s         \n");
 	printf("---------------------------------\n");
+	char *null_test = NULL;
+	ft_printf("Test |%s|\n", null_test);
+	printf("Vraie fonction : ");
+	printf("Test |%s|\n\n", null_test);
 	char *str_test = "réussi";
 	ft_printf("Test |%s|\n", str_test);
 	printf("Vraie fonction : ");
-	printf("Test |%s|\n\n\n", str_test);
+	printf("Test |%s|\n\n", str_test);
 	ft_printf("Test |%s|\n", "Ceci est un test");
 	printf("Vraie fonction :");
 	printf("Test |%s|\n\n", "Ceci est un test");
@@ -61,7 +65,7 @@ int	main(void)
 	ft_printf("Test %d\n", int_test2);
 	printf("Vraie fonction : ");
 	printf("Test %d\n\n", int_test2);
-	int int_test0 = -42;
+	int int_test0 = -4212242;
 	ft_printf("Test %d\n", int_test0);
 	printf("Vraie fonction : ");
 	printf("Test %d\n\n", int_test0);
@@ -81,7 +85,7 @@ int	main(void)
 	ft_printf("Test %i\n", int_test5);
 	printf("Vraie fonction : ");
 	printf("Test %i\n\n", int_test5);
-	int int_test6 = 42;
+	int int_test6 = 57789;
 	ft_printf("Test %i\n", int_test6);
 	printf("Vraie fonction : ");
 	printf("Test %i\n\n", int_test6);
@@ -101,7 +105,7 @@ int	main(void)
 	ft_printf("Test %u\n", int_test9);
 	printf("Vraie fonction :");
 	printf("Test %u\n\n", int_test9);
-	unsigned int int_test10 = 42;
+	unsigned int int_test10 = 4278;
 	ft_printf("Test %u\n", int_test10);
 	printf("Vraie fonction :");
 	printf("Test %d\n\n", int_test10);
@@ -109,6 +113,57 @@ int	main(void)
 	ft_printf("Test %u\n", int_test12);
 	printf("Vraie fonction :");
 	printf("Test %u\n\n\n", int_test12);
+
+ 	printf("---------------------------------\n");
+	printf("          Tests for %%x         \n");
+	printf("---------------------------------\n");
+	int int_test13 = 0;					// Expected : 0 (base 16)
+	ft_printf("%x\n", int_test13);
+	printf("Vraie fonction :");
+	printf("%x\n\n", int_test13);
+	int int_test14 = 42;				// Expected : 2A (base 16)
+	ft_printf("%x\n", int_test14);
+	printf("Vraie fonction :");
+	printf("%x\n\n", int_test14);
+	int int_test17 = -1;				// Expected : fffffff
+	ft_printf("%x\n", int_test17);
+	printf("Vraie fonction :");
+	printf("%x\n\n\n", int_test17);
+	int int_test18 = 13;				// Expected : d
+	ft_printf("%x\n", int_test18);
+	printf("Vraie fonction :");
+	printf("%x\n\n\n", int_test18);
+	int int_test19 = 5;					// Expected : 5
+	ft_printf("%x\n", int_test19);
+	printf("Vraie fonction :");
+	printf("%x\n\n\n", int_test19);
+	int int_test15 = INT_MIN;			// Expected : -80000000 (base 16)
+	ft_printf("%x\n", int_test15);
+	printf("Vraie fonction :");
+	printf("%x\n\n", int_test15);
+	int int_test16 = INT_MAX;			// Expected : 7FFFFFFF (base 16)
+	ft_printf("%x\n", int_test16);
+	printf("Vraie fonction :");
+	printf("%x\n\n", int_test16);
+
+
+	// printf("---------------------------------\n");
+	// printf("          Tests for %%p         \n");
+	// printf("---------------------------------\n");
+	// char *ptr_test = NULL;
+	// ft_printf("Test NULL address |%p|\n", ptr_test);
+	// printf("Vraie fonction : ");
+	// printf("Test NULL address |%p|\n\n", ptr_test);
+	// char *test2 = "Test123*";
+	// char *ptr_test2= test2;
+	// ft_printf("Test str address |%p|\n", ptr_test2);
+	// printf("Vraie fonction : ");
+	// printf("Test str address |%p|\n\n", ptr_test2);
+	// int test3 = 1;
+	// int *ptr_test3= &test3;
+	// ft_printf("Test int address |%p|\n", ptr_test3);
+	// printf("Vraie fonction : ");
+	// printf("Test int address |%p|\n\n\n", ptr_test3);
 	return (0);
 }
 
@@ -134,53 +189,6 @@ int	main(void)
 // 	ft_printf("%r\n", '1');
 // 	printf("Vraie fonction :");
 // 	printf("%r\n", '1');
-// 	printf("---------------------------------");
-
-
-// 	printf("---------------------------------");
-// 	printf("          Tests for \%p          ");
-// 	printf("---------------------------------\nMa fonction :");
-// 	char *ptr_test = NULL;
-// 	ft_printf("%p\n", ptr_test);
-// 	printf("Vraie fonction :");
-// 	printf("%p\n", ptr_test);
-// 	printf("---------------------------------\nMa fonction :");
-// 	char *test2 = "Test123*";
-// 	char *ptr_test2= &test2;
-// 	ft_printf("%p\n", ptr_test2);
-// 	printf("Vraie fonction :");
-// 	printf("%p\n", ptr_test2);
-// 	printf("---------------------------------\nMa fonction :");
-// 	char *test3 = 1;
-// 	char *ptr_test3= &test3;
-// 	ft_printf("%p\n", ptr_test3);
-// 	printf("Vraie fonction :");
-// 	printf("%p\n", ptr_test3);
-// 	printf("---------------------------------");
-
-
-// 	printf("---------------------------------");
-// 	printf("          Tests for \%x          ");
-// 	printf("---------------------------------\nMa fonction :");
-// 	int int_test13 = 0;					// Expected : 0 (base 16)
-// 	ft_printf("%x\n", int_test13);
-// 	printf("Vraie fonction :");
-// 	printf("%x\n", int_test13);
-// 	printf("---------------------------------\nMa fonction :");
-// 	int *int_test14 = 42;				// Expected : 2A (base 16)
-// 	ft_printf("%x\n", int_test14);
-// 	printf("Vraie fonction :");
-// 	printf("%x\n", int_test14);
-// 	printf("---------------------------------\nMa fonction :");
-// 	int *int_test15 = INT_MIN;			// Expected : -80000000 (base 16)
-// 	ft_printf("%x\n", int_test15);
-// 	printf("Vraie fonction :");
-// 	printf("%x\n", int_test15);
-// 	printf("---------------------------------\nMa fonction :");
-// 	int *int_test16 = INT_MAX;			// Expected : 7FFFFFFF (base 16)
-// 	ft_printf("%x\n", int_test16);
-// 	printf("Vraie fonction :");
-// 	printf("%x\n", int_test16);
 // 	printf("---------------------------------");
 
 // 	return (0);

@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 18:01:02 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/08/04 05:53:55 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/08/04 07:59:32 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,8 @@ void	parse_flags(char flag, va_list args_lst)
 		print_i(args_lst);
 	else if (flag == 'u')
 		print_u(args_lst);
+	// else if (flag == 'p')
+	// 	print_p(args_lst);
+	else if (flag == 'x')
+		print_x(args_lst);
 }
