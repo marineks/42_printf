@@ -6,7 +6,7 @@
 /*   By: marine <marine@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 05:58:15 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/08/04 21:59:52 by marine           ###   ########.fr       */
+/*   Updated: 2021/08/04 22:18:03 by marine           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void ft_putnbr_uint(unsigned int n, int fd)
 
 void ft_putnbr_hexa(int n, int fd)
 {
-	char store_value[10];
+	char store_value[20];
 	int temp;
 	int i;
 	int j;

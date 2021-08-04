@@ -6,7 +6,7 @@
 /*   By: marine <marine@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 14:04:53 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/08/04 21:55:34 by marine           ###   ########.fr       */
+/*   Updated: 2021/08/04 22:13:40 by marine           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,23 +150,23 @@ int main(void)
 	printf("Vraie fonction : ");
 	printf("%d devient %x\n\n\n", int_test20, int_test20);
 
-	// printf("---------------------------------\n");
-	// printf("          Tests for %%p         \n");
-	// printf("---------------------------------\n");
-	// char *ptr_test = NULL;
-	// ft_printf("Test NULL address |%p|\n", ptr_test);
-	// printf("Vraie fonction : ");
-	// printf("Test NULL address |%p|\n\n", ptr_test);
-	// char *test2 = "Test123*";
-	// char *ptr_test2= test2;
-	// ft_printf("Test str address |%p|\n", ptr_test2);
-	// printf("Vraie fonction : ");
-	// printf("Test str address |%p|\n\n", ptr_test2);
-	// int test3 = 1;
-	// int *ptr_test3= &test3;
-	// ft_printf("Test int address |%p|\n", ptr_test3);
-	// printf("Vraie fonction : ");
-	// printf("Test int address |%p|\n\n\n", ptr_test3);
+	printf("---------------------------------\n");
+	printf("          Tests for %%p         \n");
+	printf("---------------------------------\n");
+	char *ptr_test = NULL;
+	ft_printf("Test NULL address |%p|\n", ptr_test);
+	printf("Vraie fonction : ");
+	printf("Test NULL address |%p|\n\n", ptr_test);
+	char *test2 = "Test123*";
+	char *ptr_test2 = test2;
+	ft_printf("Test str address |%p|\n", ptr_test2);
+	printf("Vraie fonction : ");
+	printf("Test str address |%p|\n\n", ptr_test2);
+	int test3 = 1;
+	int *ptr_test3 = &test3;
+	ft_printf("Test int address |%p|\n", ptr_test3);
+	printf("Vraie fonction : ");
+	printf("Test int address |%p|\n\n\n", ptr_test3);
 	return (0);
 }
 
