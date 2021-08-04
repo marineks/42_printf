@@ -6,7 +6,7 @@
 #    By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/02 14:46:18 by msanjuan          #+#    #+#              #
-#    Updated: 2021/08/03 16:00:43 by msanjuan         ###   ########.fr        #
+#    Updated: 2021/08/04 04:21:18 by msanjuan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,7 @@ ${LIBFT_DIR}:
 
 run_tests:	all
 		@echo "Compiling and running the files..."
-		${CC} ${CFLAGS} main.c -I. -L. -lft
+		${CC} ${CFLAGS} ${SRCS_DIR}/main.c -I. -L. -lftprintf
 		./a.out
 
 clean:
