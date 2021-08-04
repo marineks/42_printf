@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marine <marine@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 14:04:53 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/08/04 09:46:19 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/08/04 21:55:34 by marine           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <limits.h>
 
-int	main(void)
+int main(void)
 {
 	printf("---------------------------------\n");
 	printf("          Tests for %%c          \n");
@@ -25,7 +25,7 @@ int	main(void)
 	ft_printf("Test |%c|\n", '1');
 	printf("Vraie fonction : ");
 	printf("Test |%c|\n\n\n", '1');
-	
+
 	printf("---------------------------------\n");
 	printf("          Tests for %%%%         \n");
 	printf("---------------------------------\n");
@@ -114,38 +114,41 @@ int	main(void)
 	printf("Vraie fonction :");
 	printf("Test %u\n\n\n", int_test12);
 
- 	printf("---------------------------------\n");
+	printf("---------------------------------\n");
 	printf("          Tests for %%x         \n");
 	printf("---------------------------------\n");
-	int int_test13 = 0;					// Expected : 0 (base 16)
-	ft_printf("%x\n", int_test13);
-	printf("Vraie fonction :");
-	printf("%x\n\n", int_test13);
-	int int_test14 = 42;				// Expected : 2A (base 16)
-	ft_printf("%x\n", int_test14);
-	printf("Vraie fonction :");
-	printf("%x\n\n", int_test14);
-	int int_test17 = -1;				// Expected : fffffff
-	ft_printf("%x\n", int_test17);
-	printf("Vraie fonction :");
-	printf("%x\n\n\n", int_test17);
-	int int_test18 = 13;				// Expected : d
-	ft_printf("%x\n", int_test18);
-	printf("Vraie fonction :");
-	printf("%x\n\n\n", int_test18);
-	int int_test19 = 5;					// Expected : 5
-	ft_printf("%x\n", int_test19);
-	printf("Vraie fonction :");
-	printf("%x\n\n\n", int_test19);
-	int int_test15 = INT_MIN;			// Expected : -80000000 (base 16)
-	ft_printf("%x\n", int_test15);
-	printf("Vraie fonction :");
-	printf("%x\n\n", int_test15);
-	int int_test16 = INT_MAX;			// Expected : 7FFFFFFF (base 16)
-	ft_printf("%x\n", int_test16);
-	printf("Vraie fonction :");
-	printf("%x\n\n", int_test16);
-
+	int int_test13 = 0; // Expected : 0 (base 16)
+	ft_printf("%d devient %x\n", int_test13, int_test13);
+	printf("Vraie fonction : ");
+	printf("%d devient %x\n\n", int_test13, int_test13);
+	int int_test14 = 42; // Expected : 2A (base 16)
+	ft_printf("%d devient %x\n", int_test14, int_test14);
+	printf("Vraie fonction : ");
+	printf("%d devient %x\n\n", int_test14, int_test14);
+	int int_test17 = -1; // Expected : fffffff
+	ft_printf("%d devient %x\n", int_test17, int_test17);
+	printf("Vraie fonction : ");
+	printf("%d devient %x\n\n", int_test17, int_test17);
+	int int_test18 = 13; // Expected : d
+	ft_printf("%d devient %x\n", int_test18, int_test18);
+	printf("Vraie fonction : ");
+	printf("%d devient %x\n\n", int_test18, int_test18);
+	int int_test19 = 5; // Expected : 5
+	ft_printf("%d devient %x\n", int_test19, int_test19);
+	printf("Vraie fonction : ");
+	printf("%d devient %x\n\n", int_test19, int_test19);
+	int int_test15 = INT_MIN; // Expected : -80000000 (base 16)
+	ft_printf("%d devient %x\n", int_test15, int_test15);
+	printf("Vraie fonction : ");
+	printf("%d devient %x\n\n", int_test15, int_test15);
+	int int_test16 = INT_MAX; // Expected : 7FFFFFFF (base 16)
+	ft_printf("%d devient %x\n", int_test16, int_test16);
+	printf("Vraie fonction : ");
+	printf("%d devient %x\n\n", int_test16, int_test16);
+	int int_test20 = 501; // Expected : 2A (base 16)
+	ft_printf("%d devient %x\n", int_test20, int_test20);
+	printf("Vraie fonction : ");
+	printf("%d devient %x\n\n\n", int_test20, int_test20);
 
 	// printf("---------------------------------\n");
 	// printf("          Tests for %%p         \n");
@@ -166,7 +169,6 @@ int	main(void)
 	// printf("Test int address |%p|\n\n\n", ptr_test3);
 	return (0);
 }
-
 
 // int	main(void)
 // {
