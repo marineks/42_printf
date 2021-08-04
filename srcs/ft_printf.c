@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 14:46:14 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/08/04 04:35:48 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/08/04 04:53:45 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ int ft_printf(const char *flag_lst, ...)
 			write(1, &(flag_lst[i]), 1);
 		i++;
 	}
-	write(1, "\n", 1);
 	va_end(args_lst);
 	return (0);
 }
