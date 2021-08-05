@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 14:02:39 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/08/05 14:50:50 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/08/05 16:12:38 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,5 @@ void	print_upp_x(va_list arg);
 void	print_p(va_list arg);
 // FT_PRINTF_UTILS.C
 void	ft_putnbr_uint(unsigned int n, int fd);
-void	ft_putnbr_hexa(int n, char *base, int fd);
+void	ft_putnbr_hexa(long int n, char *base, int fd);
 #endif

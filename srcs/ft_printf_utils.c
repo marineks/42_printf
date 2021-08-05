@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 05:58:15 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/08/05 15:15:40 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/08/05 16:12:37 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ void ft_putnbr_uint(unsigned int n, int fd)
 	}
 }
 
-void ft_putnbr_hexa(int n, char *base, int fd)
+void ft_putnbr_hexa(long int n, char *base, int fd)
 {
 	long int nbr;
-	char res[13];
+	char res[100];
 	int i;
 	int j;
 	

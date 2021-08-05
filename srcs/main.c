@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 14:04:53 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/08/05 14:50:05 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/08/05 15:50:50 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -222,9 +222,19 @@ int main(void)
 	printf("Test int address |%p|\n\n", ptr_test3);
 	char test4 = 'a';
 	char *ptr_test4 = &test4;
-	ft_printf("Test int address |%p|\n", ptr_test4);
+	ft_printf("Test char address |%p|\n", ptr_test4);
 	printf("Vraie fonction : ");
-	printf("Test int address |%p|\n\n\n", ptr_test4);
+	printf("Test char address |%p|\n\n\n", ptr_test4);
+
+	printf("---------------------------------\n");
+	printf("       Tests for every flags     \n");
+	printf("---------------------------------\n");
+	char *phrase;
+	phrase = "phrase trop longue lol";
+	int count_printf = (ft_printf("Tests d'une longue %s de %c lignes pour \ntester les %d flags %% (ou est-ce %i?), sachant que 42 fait %x (%X)\n\n", phrase, 'x', 9, 10, 42, 42));
+	int vrai_printf = (printf("Tests d'une longue %s de %c lignes pour \ntester les %d flags %% (ou est-ce %i?), sachant que 42 fait %x (%X)\n\n", phrase, 'x', 9, 10, 42, 42));
+	ft_printf("Compteur de la fausse : %d\n", count_printf);
+	printf("Compteur de la vraie : %d\n\n\n", vrai_printf);
 	return (0);
 }
 
