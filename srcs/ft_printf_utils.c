@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 05:58:15 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/08/05 14:45:45 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/08/05 15:15:40 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,34 +30,22 @@ void ft_putnbr_hexa(int n, char *base, int fd)
 	int i;
 	int j;
 	
-	nbr = (long int)n;
 	i = 0;
-	if (!nbr) 
+	if (n == 0) 
 		ft_putchar_fd('0', fd);
-	if (nbr > 0) {
-		while (nbr) 
-		{
+	if (n > 0) 
+		nbr = (long int)n;
+	else
+		nbr = (unsigned int)n;
+	while (nbr) 
+	{
 			res[i] = base[nbr % 16];
 			nbr /= 16;
 			i++;
-		}
-	}
-	else 
-	{
-		unsigned int num = n;
-		while (num) 
-		{
-			res[i] = base[num % 16];
-			num /= 16;
-			i++;
-		}
 	}
 	res[i] = '\0';
 	j = ft_strlen(res) - 1;
 	while (j >= 0)
-	{
-		ft_putchar_fd(res[j], fd);
-		j--;
-	}
+		ft_putchar_fd(res[j--], fd);
 }
 
