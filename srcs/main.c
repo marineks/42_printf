@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 14:04:53 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/08/05 13:29:23 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/08/05 14:50:05 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,6 +159,51 @@ int main(void)
 	printf("%d devient %x\n\n\n", int_test22, int_test22);
 
 	printf("---------------------------------\n");
+	printf("          Tests for %%X         \n");
+	printf("---------------------------------\n");
+	int int_test23 = 0;
+	ft_printf("%d devient %X\n", int_test23, int_test23);
+	printf("Vraie fonction : ");
+	printf("%d devient %X\n\n", int_test23, int_test23);
+	int int_test24 = 42;
+	ft_printf("%d devient %X\n", int_test24, int_test24);
+	printf("Vraie fonction : ");
+	printf("%d devient %X\n\n", int_test24, int_test24);
+	int int_test25 = -1;
+	ft_printf("%d devient %X\n", int_test25, int_test25);
+	printf("Vraie fonction : ");
+	printf("%d devient %X\n\n", int_test25, int_test25);
+	int int_test26 = 13;
+	ft_printf("%d devient %X\n", int_test26, int_test26);
+	printf("Vraie fonction : ");
+	printf("%d devient %X\n\n", int_test26, int_test26);
+	int int_test27 = 5;
+	ft_printf("%d devient %X\n", int_test27, int_test27);
+	printf("Vraie fonction : ");
+	printf("%d devient %X\n\n", int_test27, int_test27);
+	int int_test28 = INT_MIN;
+	ft_printf("%d devient %X\n", int_test28, int_test28);
+	printf("Vraie fonction : ");
+	printf("%d devient %X\n\n", int_test28, int_test28);
+	int int_test29 = INT_MAX;
+	ft_printf("%d devient %X\n", int_test29, int_test29);
+	printf("Vraie fonction : ");
+	printf("%d devient %X\n\n", int_test29, int_test29);
+	int int_test30 = 501;
+	ft_printf("%d devient %X\n", int_test30, int_test30);
+	printf("Vraie fonction : ");
+	printf("%d devient %X\n\n", int_test30, int_test30);
+	int int_test31 = -178;
+	ft_printf("%d devient %X\n", int_test31, int_test31);
+	printf("Vraie fonction : ");
+	printf("%d devient %X\n\n", int_test31, int_test31);
+	int int_test32 = 111111;
+	ft_printf("%d devient %X\n", int_test32, int_test32);
+	printf("Vraie fonction : ");
+	printf("%d devient %X\n\n\n", int_test32, int_test32);
+
+
+	printf("---------------------------------\n");
 	printf("          Tests for %%p         \n");
 	printf("---------------------------------\n");
 	char *ptr_test = NULL;
@@ -174,7 +219,12 @@ int main(void)
 	int *ptr_test3 = &test3;
 	ft_printf("Test int address |%p|\n", ptr_test3);
 	printf("Vraie fonction : ");
-	printf("Test int address |%p|\n\n\n", ptr_test3);
+	printf("Test int address |%p|\n\n", ptr_test3);
+	char test4 = 'a';
+	char *ptr_test4 = &test4;
+	ft_printf("Test int address |%p|\n", ptr_test4);
+	printf("Vraie fonction : ");
+	printf("Test int address |%p|\n\n\n", ptr_test4);
 	return (0);
 }
 

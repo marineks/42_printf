@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 04:42:11 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/08/04 08:01:30 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/08/05 14:46:57 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,13 @@ void	print_x(va_list arg)
 {
 	int temp;
 	temp = va_arg(arg, int);
-	ft_putnbr_hexa(temp, 1);
+	ft_putnbr_hexa(temp, "0123456789abcdef", 1);
+}
+
+//%x imprime un nombre en hexadécimal (base 16)
+void	print_upp_x(va_list arg)
+{
+	int temp;
+	temp = va_arg(arg, int);
+	ft_putnbr_hexa(temp, "0123456789ABCDEF", 1);
 }

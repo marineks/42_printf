@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marine <marine@student.42.fr>              +#+  +:+       +#+        */
+/*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 18:01:02 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/08/04 22:17:14 by marine           ###   ########.fr       */
+/*   Updated: 2021/08/05 14:50:29 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void parse_flags(char flag, va_list args_lst)
+void parse_format_specifiers(char flag, va_list args_lst)
 {
 	if (flag == '%')
 		print_percentage();
@@ -30,4 +30,6 @@ void parse_flags(char flag, va_list args_lst)
 		print_p(args_lst);
 	else if (flag == 'x')
 		print_x(args_lst);
+	else if (flag == 'X')
+		print_upp_x(args_lst);
 }

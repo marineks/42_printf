@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 14:46:14 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/08/04 07:30:27 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/08/05 14:22:53 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int ft_printf(const char *flag_lst, ...)
 	{
 		if (flag_lst[i] == '%')
 		{
-			parse_flags(flag_lst[i + 1], args_lst);
+			parse_format_specifiers(flag_lst[i + 1], args_lst);
 			i++;
 		} 
 		else 
