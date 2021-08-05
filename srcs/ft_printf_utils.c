@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marine <marine@student.42.fr>              +#+  +:+       +#+        */
+/*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 05:58:15 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/08/04 22:18:03 by marine           ###   ########.fr       */
+/*   Updated: 2021/08/05 13:26:22 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,96 +26,97 @@ void ft_putnbr_uint(unsigned int n, int fd)
 // void ft_putnbr_hexa(int n, int fd)
 // {
 // 	char *base;
-// 	// long long int nbr;
+// 	long int nbr;
 // 	int len;
 
 // 	base = "0123456789abcdef";
 // 	len = ft_strlen(base);
-// 	// nbr = (long long int)n;
-// 	if (n < 0)
+// 	nbr = (long int)n;
+// 	if (nbr < 0)
 // 	{
-// 		ft_putchar_fd('-', fd);
-// 		n = -n;
-// 	}
-// 	if (n > len)
-// 	{
-// 		ft_putnbr_hexa(base[n / 16], fd);
-// 		ft_putchar_fd(base[n % 16], fd);
+// 		nbr = (unsigned int)n;
+// 		ft_putnbr_hexa(base[nbr / 16], fd);
 // 	}
 // 	else
 // 	{
-// 		ft_putchar_fd(base[n % 16], fd);
+// 		if (nbr >= len)
+// 		{
+// 			ft_putnbr_hexa(base[nbr / 16], fd);
+// 			ft_putchar_fd(base[nbr % 16], fd);
+// 			nbr /= 16;
+// 		}
+// 		else
+// 		{
+// 			ft_putchar_fd(base[nbr % 16], fd);
+// 			nbr /= 16;
+// 		}
 // 	}
-// }
-
+// // }
 // void ft_putnbr_hexa(int n, int fd)
 // {
 // 	char *base;
-// 	unsigned long int nbr;
-
+// 	long int nbr;
+	
 // 	base = "0123456789abcdef";
-// 	nbr = (unsigned long int)n;
-// 	if (n == 0)
-// 		ft_putchar_fd('0', fd);
-// 	if (n > 0)
+// 	nbr = (long int)n;
+// 	if (nbr == 0) 
 // 	{
-// 		while (n != 0)
+// 		ft_putchar_fd('0', fd);
+// 	}
+// 	if (nbr > 0) {
+// 		while (nbr) 
 // 		{
-// 			ft_putchar_fd(base[n % 16], fd);
-// 			n /= 16;
+// 			ft_putchar_fd(base[nbr % 16], fd);
+// 			nbr /= 16;
 // 		}
 // 	}
-// 	else
+// 	else 
 // 	{
-// 		while (nbr != 0)
+// 		unsigned int num = n;
+// 		while (num) 
 // 		{
-// 			ft_putchar_fd(base[n % 16], fd);
-// 			nbr = nbr / 16;
+// 			ft_putchar_fd(base[num % 16], fd);
+// 			num /= 16;
 // 		}
 // 	}
 // }
 
 void ft_putnbr_hexa(int n, int fd)
 {
-	char store_value[20];
-	int temp;
+	char *base;
+	long int nbr;
+	char res[13];
 	int i;
 	int j;
-
+	
+	base = "0123456789abcdef";
+	nbr = (long int)n;
 	i = 0;
-	if (n == INT_MIN)
-		ft_putstr_fd("80000000", fd);
-	else if (n == 0)
+	if (!nbr) 
 		ft_putchar_fd('0', fd);
-	else
+	if (nbr > 0) {
+		while (nbr) 
+		{
+			res[i] = base[nbr % 16];
+			nbr /= 16;
+			i++;
+		}
+	}
+	else 
 	{
-		if (n < 0)
+		unsigned int num = n;
+		while (num) 
 		{
-			store_value[i] = '-';
-			n = -n;
+			res[i] = base[num % 16];
+			num /= 16;
+			i++;
 		}
-		while (n != 0)
-		{
-			temp = n % 16;
-			if (temp < 10)
-			{
-				store_value[i] = temp + 48;
-				i++;
-			}
-			else
-			{
-				store_value[i] = temp + 87;
-				i++;
-			}
-			n = n / 16;
-		}
-		j = i - 1;
-		if (store_value[0] == '-')
-			ft_putchar_fd(store_value[0], fd);
-		while (j >= 0 && store_value[j] != '-')
-		{
-			ft_putchar_fd(store_value[j], fd);
-			j--;
-		}
+	}
+	res[i] = '\0';
+	j = ft_strlen(res) - 1;
+	while (j >= 0)
+	{
+		ft_putchar_fd(res[j], fd);
+		j--;
 	}
 }
