@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 14:04:53 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/08/06 12:04:01 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/08/06 12:14:46 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,15 @@
 
 int main(void)
 {
+	printf("---------------------------------\n");
+	printf("        Tests with no flags      \n");
+	printf("---------------------------------\n");
+	int ct_printf = (ft_printf("Bonjour ceci est un test sans flag\n"));
+	int v_printf = (printf("Bonjour ceci est un test sans flag\n"));
+	ft_printf("Compteur de la fausse : %d\n", ct_printf);
+	printf("Compteur de la vraie : %d\n\n\n", v_printf);
+
+
 	printf("---------------------------------\n");
 	printf("       Tests for every flags     \n");
 	printf("---------------------------------\n");

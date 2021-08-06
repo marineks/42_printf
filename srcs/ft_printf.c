@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 14:46:14 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/08/06 12:04:19 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/08/06 12:14:22 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,5 @@ int ft_printf(const char *flag_lst, ...)
 		i++;
 	}
 	va_end(args_lst);
-	ft_putstr_fd("Compteur de ma fonction : ", 1);
-	ft_putnbr_fd(count + specifiers_count, 1);
-	ft_putstr_fd("\n", 1);
 	return (count + specifiers_count);
 }
