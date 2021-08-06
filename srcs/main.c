@@ -6,13 +6,18 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 14:04:53 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/08/06 15:01:35 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/08/06 15:21:44 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>
 #include <limits.h>
+
+void check(int a, int b)
+{
+	a == b ? printf("\e[0;32mOK.\n\n") : printf("\e[0;31mKO.\n\n");
+}
 
 int main(void)
 {
@@ -23,7 +28,7 @@ int main(void)
 	ft_printf("Compteur de la fausse : %d\n\n", ct_printf);
 	int v_printf = (printf("Bonjour ceci est un test sans flag\n"));
 	printf("Compteur de la vraie : %d\n\n\n", v_printf);
-
+	check(ct_printf, v_printf);
 
 	printf("\e[0;33m---------------------------------\n");
 	printf("      Tests for \e[0;35mevery\e[0;33m  flags     \n");
@@ -33,16 +38,16 @@ int main(void)
 	int count_printf = (ft_printf("Tests d'une longue %s de %c lignes pour \ntester les %d flags %% (ou est-ce %i?), sachant que 42 fait %x (%X)\n\n", phrase, 'x', 9, 10, 42, 42));
 	ft_printf("Compteur de la fausse : %d\n\n", count_printf);
 	int vrai_printf = (printf("Tests d'une longue %s de %c lignes pour \ntester les %d flags %% (ou est-ce %i?), sachant que 42 fait %x (%X)\n\n", phrase, 'x', 9, 10, 42, 42));
-	printf("Compteur de la vraie : %d\n\n\n", vrai_printf);
-
+	printf("Compteur de la vraie : %d\n", vrai_printf);
+	check(count_printf, vrai_printf);
 	
 	printf("\e[0;33m---------------------------------\n");
 	printf("          Tests for \e[0;35m%%c\e[0;33m          \n");
 	printf("---------------------------------\e[0m\n");
 	ft_printf("Compteur de la fausse : %d\n\n", ft_printf("Test |%c|\n", 'j'));
 	printf("Compteur de la vraie: %d\n\n", printf("Test |%c|\n", 'j'));
-	ft_printf("Compteur de la fausse : %d\n\n", ft_printf("Test |%c| |%c| |%s|\n", '1', 'w', "pas"));
-	printf("Compteur de la vraie: %d\n\n\n", printf("Test |%c| |%c| |%s|\n", '1', 'w', "pas"));
+	ft_printf("Compteur de la fausse : %d\n\n", ft_printf("Test |%c| |%c| |%s|\n", '1', 'w', "c"));
+	printf("Compteur de la vraie: %d\n\n\n", printf("Test |%c| |%c| |%s|\n", '1', 'w', "c"));
 
 	printf("\e[0;33m---------------------------------\n");
 	printf("          Tests for \e[0;35m%%%%\e[0;33m         \n");
