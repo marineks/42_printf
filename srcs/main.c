@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 14:04:53 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/08/06 12:14:46 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/08/06 15:01:35 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,47 +16,43 @@
 
 int main(void)
 {
-	printf("---------------------------------\n");
-	printf("        Tests with no flags      \n");
-	printf("---------------------------------\n");
+	printf("\e[0;33m---------------------------------\n");
+	printf("        Tests with \e[0;35mno\e[0;33m flags      \n");
+	printf("---------------------------------\e[0m\n");
 	int ct_printf = (ft_printf("Bonjour ceci est un test sans flag\n"));
+	ft_printf("Compteur de la fausse : %d\n\n", ct_printf);
 	int v_printf = (printf("Bonjour ceci est un test sans flag\n"));
-	ft_printf("Compteur de la fausse : %d\n", ct_printf);
 	printf("Compteur de la vraie : %d\n\n\n", v_printf);
 
 
-	printf("---------------------------------\n");
-	printf("       Tests for every flags     \n");
-	printf("---------------------------------\n");
+	printf("\e[0;33m---------------------------------\n");
+	printf("      Tests for \e[0;35mevery\e[0;33m  flags     \n");
+	printf("---------------------------------\e[0m\n");
 	char *phrase;
 	phrase = "phrase";
 	int count_printf = (ft_printf("Tests d'une longue %s de %c lignes pour \ntester les %d flags %% (ou est-ce %i?), sachant que 42 fait %x (%X)\n\n", phrase, 'x', 9, 10, 42, 42));
+	ft_printf("Compteur de la fausse : %d\n\n", count_printf);
 	int vrai_printf = (printf("Tests d'une longue %s de %c lignes pour \ntester les %d flags %% (ou est-ce %i?), sachant que 42 fait %x (%X)\n\n", phrase, 'x', 9, 10, 42, 42));
-	ft_printf("Compteur de la fausse : %d\n", count_printf);
 	printf("Compteur de la vraie : %d\n\n\n", vrai_printf);
 
 	
-	printf("---------------------------------\n");
-	printf("          Tests for %%c          \n");
-	printf("---------------------------------\n");
-	ft_printf("Test |%c|\n", 'j');
-	printf("Vraie fonction : ");
-	// printf("Test |%c|\n\n", 'j');
-	printf("Test |%c|\nCompteur vraie fonction: %d\n\n\n", 'j', printf("Test |%c|\n\n", 'j'));
-	// ft_printf("Test |%c|\n", '1');
-	printf("Vraie fonction : ");
-	printf("Test |%c|\nCompteur vraie fonction: %d\n\n\n", '1', printf("Test |%c|\n\n", '1'));
+	printf("\e[0;33m---------------------------------\n");
+	printf("          Tests for \e[0;35m%%c\e[0;33m          \n");
+	printf("---------------------------------\e[0m\n");
+	ft_printf("Compteur de la fausse : %d\n\n", ft_printf("Test |%c|\n", 'j'));
+	printf("Compteur de la vraie: %d\n\n", printf("Test |%c|\n", 'j'));
+	ft_printf("Compteur de la fausse : %d\n\n", ft_printf("Test |%c| |%c| |%s|\n", '1', 'w', "pas"));
+	printf("Compteur de la vraie: %d\n\n\n", printf("Test |%c| |%c| |%s|\n", '1', 'w', "pas"));
 
-	printf("---------------------------------\n");
-	printf("          Tests for %%%%         \n");
-	printf("---------------------------------\n");
-	ft_printf("Test |%%|\n");
-	printf("Vraie fonction : ");
-	printf("Test |%%|\n\n\n");
+	printf("\e[0;33m---------------------------------\n");
+	printf("          Tests for \e[0;35m%%%%\e[0;33m         \n");
+	printf("---------------------------------\e[0m\n");
+	ft_printf("Compteur de la fausse : %d\n\n", ft_printf("Test |%%|\n"));
+	printf("Compteur de la vraie: %d\n\n\n", printf("Test |%%|\n"));
 
-	printf("---------------------------------\n");
-	printf("          Tests for %%s         \n");
-	printf("---------------------------------\n");
+	printf("\e[0;33m---------------------------------\n");
+	printf("          Tests for \e[0;35m%%s\e[0;33m         \n");
+	printf("---------------------------------\e[0m\n");
 	char *null_test = NULL;
 	ft_printf("Test |%s|\n", null_test);
 	printf("Vraie fonction : ");
@@ -75,9 +71,9 @@ int main(void)
 	printf("Vraie fonction :");
 	printf("Test |%s|\n\n\n", "The red glint of paint sparkled under the sun. He had dreamed of owning this car since he was ten, and that dream had become a reality less than a year ago. It was his baby and he spent hours caring for it, pampering it, and fondling over it. She knew this all too well, and that's exactly why she had taken a sludge hammer to it.");
 
-	printf("---------------------------------\n");
-	printf("          Tests for %%d         \n");
-	printf("---------------------------------\n");
+	printf("\e[0;33m---------------------------------\n");
+	printf("          Tests for \e[0;35m%%d\e[0;33m         \n");
+	printf("---------------------------------\e[0m\n");
 	int int_test = 0;
 	ft_printf("Test %d\n", int_test);
 	printf("Vraie fonction : ");
@@ -99,9 +95,9 @@ int main(void)
 	printf("Vraie fonction : ");
 	printf("Test %d\n\n\n", int_test4);
 
-	printf("---------------------------------\n");
-	printf("          Tests for %%i         \n");
-	printf("---------------------------------\n");
+	printf("\e[0;33m---------------------------------\n");
+	printf("         Tests for \e[0;35m%%i\e[0;33m         \n");
+	printf("---------------------------------\e[0m\n");
 	int int_test5 = 0;
 	ft_printf("Test %i\n", int_test5);
 	printf("Vraie fonction : ");
@@ -119,9 +115,9 @@ int main(void)
 	printf("Vraie fonction : ");
 	printf("Test %i\n\n\n", int_test8);
 
-	printf("---------------------------------\n");
-	printf("          Tests for %%u         \n");
-	printf("---------------------------------\n");
+	printf("\e[0;33m---------------------------------\n");
+	printf("          Tests for \e[0;35m%%u\e[0;33m         \n");
+	printf("---------------------------------\e[0m\n");
 	unsigned int int_test9 = 0;
 	ft_printf("Test %u\n", int_test9);
 	printf("Vraie fonction :");
@@ -135,9 +131,9 @@ int main(void)
 	printf("Vraie fonction :");
 	printf("Test %u\n\n\n", int_test12);
 
-	printf("---------------------------------\n");
-	printf("          Tests for %%x         \n");
-	printf("---------------------------------\n");
+	printf("\e[0;33m---------------------------------\n");
+	printf("          Tests for \e[0;35m%%x\e[0;33m         \n");
+	printf("---------------------------------\e[0m\n");
 	int int_test13 = 0;
 	ft_printf("%d devient %x\n", int_test13, int_test13);
 	printf("Vraie fonction : ");
@@ -179,9 +175,9 @@ int main(void)
 	printf("Vraie fonction : ");
 	printf("%d devient %x\n\n\n", int_test22, int_test22);
 
-	printf("---------------------------------\n");
-	printf("          Tests for %%X         \n");
-	printf("---------------------------------\n");
+	printf("\e[0;33m---------------------------------\n");
+	printf("          Tests for \e[0;35m%%X\e[0;33m         \n");
+	printf("---------------------------------\e[0m\n");
 	int int_test23 = 0;
 	ft_printf("%d devient %X\n", int_test23, int_test23);
 	printf("Vraie fonction : ");
@@ -224,9 +220,9 @@ int main(void)
 	printf("%d devient %X\n\n\n", int_test32, int_test32);
 
 
-	printf("---------------------------------\n");
-	printf("          Tests for %%p         \n");
-	printf("---------------------------------\n");
+	printf("\e[0;33m---------------------------------\n");
+	printf("          Tests for \e[0;35m%%p\e[0;33m         \n");
+	printf("---------------------------------\e[0m\n");
 	char *ptr_test = NULL;
 	ft_printf("Test NULL address |%p|\n", ptr_test);
 	printf("Vraie fonction : ");
