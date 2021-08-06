@@ -6,48 +6,48 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 04:42:11 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/08/05 14:46:57 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/08/05 17:42:14 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
 // %d imprime un nombre décimal (base 10)
-void	print_d(va_list arg)
+int	print_d(va_list arg)
 {
 	int temp;
 	temp = va_arg(arg, int);
-	ft_putnbr_fd(temp, 1);
+	return (ftt_putnbr_fd(temp, 1));
 }
 
 //%i imprime un entier en base 10
-void	print_i(va_list arg)
+int	print_i(va_list arg)
 {
 	int temp;
 	temp = va_arg(arg, int);
-	ft_putnbr_fd(temp, 1);
+	return (ftt_putnbr_fd(temp, 1));
 }
 
 //%u imprime un nombre décimal non signé (base 10).
-void	print_u(va_list arg)
+int	print_u(va_list arg)
 {
 	unsigned int temp;
 	temp = va_arg(arg, unsigned int);
-	ft_putnbr_uint(temp, 1);
+	return (ft_putnbr_uint(temp, 1));
 }
 
 //%x imprime un nombre en hexadécimal (base 16)
-void	print_x(va_list arg)
+int	print_x(va_list arg)
 {
 	int temp;
 	temp = va_arg(arg, int);
-	ft_putnbr_hexa(temp, "0123456789abcdef", 1);
+	return (ft_putnbr_hexa(temp, "0123456789abcdef", 1));
 }
 
 //%x imprime un nombre en hexadécimal (base 16)
-void	print_upp_x(va_list arg)
+int	print_upp_x(va_list arg)
 {
 	int temp;
 	temp = va_arg(arg, int);
-	ft_putnbr_hexa(temp, "0123456789ABCDEF", 1);
+	return (ft_putnbr_hexa(temp, "0123456789ABCDEF", 1));
 }

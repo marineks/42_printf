@@ -6,30 +6,33 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 18:01:02 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/08/05 14:50:29 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/08/06 11:59:25 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void parse_format_specifiers(char flag, va_list args_lst)
+int parse_format_specifiers(char flag, va_list args_lst)
 {
+	int spe_count = 0;
+
 	if (flag == '%')
-		print_percentage();
+		spe_count += print_percentage();
 	else if (flag == 'c')
-		print_character(args_lst);
+		spe_count += print_character(args_lst);
 	else if (flag == 's')
-		print_string(args_lst);
+		spe_count += print_string(args_lst);
 	else if (flag == 'd')
-		print_d(args_lst);
+		spe_count += print_d(args_lst);
 	else if (flag == 'i')
-		print_i(args_lst);
+		spe_count += print_i(args_lst);
 	else if (flag == 'u')
-		print_u(args_lst);
+		spe_count += print_u(args_lst);
 	else if (flag == 'p')
-		print_p(args_lst);
+		spe_count += print_p(args_lst);
 	else if (flag == 'x')
-		print_x(args_lst);
+		spe_count += print_x(args_lst);
 	else if (flag == 'X')
-		print_upp_x(args_lst);
+		spe_count += print_upp_x(args_lst);
+	return (spe_count);
 }
