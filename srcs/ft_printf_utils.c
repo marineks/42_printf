@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 05:58:15 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/08/06 11:53:38 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/08/06 12:11:18 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int ft_putnbr_hexa(long int n, char *base, int fd)
 	return (ft_strlen(res));
 }
 
-int	ftt_putnbr_fd(int n, int fd)
+int	ft_putnbr_dec(int n, int fd)
 {
 	static int count = 0;
 
@@ -77,12 +77,12 @@ int	ftt_putnbr_fd(int n, int fd)
 	{
 		ft_putchar_fd('-', fd);
 		count++;
-		ftt_putnbr_fd((n * -1), fd);
+		ft_putnbr_dec((n * -1), fd);
 	}
 	else if (n >= 0 && n > 9)
 	{
-		ftt_putnbr_fd((n / 10), fd);
-		ftt_putnbr_fd((n % 10), fd);
+		ft_putnbr_dec((n / 10), fd);
+		ft_putnbr_dec((n % 10), fd);
 	}
 	return (count);
 }

@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 04:42:11 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/08/05 17:42:14 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/08/06 12:10:51 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	print_d(va_list arg)
 {
 	int temp;
 	temp = va_arg(arg, int);
-	return (ftt_putnbr_fd(temp, 1));
+	return (ft_putnbr_dec(temp, 1));
 }
 
 //%i imprime un entier en base 10
@@ -25,7 +25,7 @@ int	print_i(va_list arg)
 {
 	int temp;
 	temp = va_arg(arg, int);
-	return (ftt_putnbr_fd(temp, 1));
+	return (ft_putnbr_dec(temp, 1));
 }
 
 //%u imprime un nombre décimal non signé (base 10).
