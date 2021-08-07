@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 14:04:53 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/08/07 09:34:47 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/08/07 10:22:26 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@
 void check(int a, int b)
 {
 	a == b ? printf("\e[0;32mOK.\e[0m (%d | Vrai: %d)\n\n", a, b) : printf("\e[0;31mKO.\e[0m(%d |Vrai: %d)\n\n", a, b);
+}
+void checkLeaks(void)
+{
+	system("leaks a.out");
 }
 
 int main(void)
@@ -34,9 +38,9 @@ int main(void)
 	printf("---------------------------------\e[0m\n");
 	char *phrase;
 	phrase = "phrase";
-	int count_printf = ft_printf("Tests d'une longue %s de %c lignes pour \ntester les %d flags %% (ou est-ce %i?), sachant que 42 fait %x (%X)\n\n", phrase, 'x', 9, 10, 42, 42);
+	int count_printf = ft_printf("Tests d'une longue %s (adresse : %p) de %c lignes pour \ntester les %d flags %% (ou est-ce %i?), sachant que 42 fait %x (%X)\n\n", phrase, &phrase, 'x', 9, 10, 42, 42);
 	ft_printf("Compteur de la fausse : %d\n\n", count_printf);
-	int vrai_printf = printf("Tests d'une longue %s de %c lignes pour \ntester les %d flags %% (ou est-ce %i?), sachant que 42 fait %x (%X)\n\n", phrase, 'x', 9, 10, 42, 42);
+	int vrai_printf = printf("Tests d'une longue %s (adresse : %p) de %c lignes pour \ntester les %d flags %% (ou est-ce %i?), sachant que 42 fait %x (%X)\n\n", phrase, &phrase, 'x', 9, 10, 42, 42);
 	printf("Compteur de la vraie : %d\n", vrai_printf);
 	check(count_printf, vrai_printf);
 
@@ -291,7 +295,7 @@ int main(void)
 	int p4_true = printf("Test char address |%p|\n", ptr_test4);
 	check(p4, p4_true);
 
-
+	atexit(checkLeaks);
 	return (0);
 }
 
