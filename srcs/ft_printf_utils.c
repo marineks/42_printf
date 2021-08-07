@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 05:58:15 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/08/07 09:33:00 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/08/07 10:16:55 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,30 +59,53 @@ int ft_putnbr_hexa(long int n, char *base, int fd)
 	return (ft_strlen(res));
 }
 
-int	ft_putnbr_dec(int n, int fd)
+void	ft_putnbr_dec(int n, int fd)
 {
-	static int count = 0;
-
 	if (n == -2147483648)
-	{
 		ft_putstr_fd("-2147483648", fd);
-		return (11);
-	}
 	else if (n >= 0 && n <= 9)
-	{
 		ft_putchar_fd((n + '0'), fd);
-		count++;
-	}	
 	else if (n < 0)
 	{
 		ft_putchar_fd('-', fd);
-		count++;
 		ft_putnbr_dec((n * -1), fd);
 	}
 	else if (n >= 0 && n > 9)
 	{
 		ft_putnbr_dec((n / 10), fd);
 		ft_putnbr_dec((n % 10), fd);
+	}
+}
+
+int	ft_count_dec(int n)
+{
+	int count = 0;
+
+	if (n == 0)
+		return (1);
+	if (n < 0)
+	{
+		count++;
+		n = -n;
+	}	
+	while (n != 0)
+	{
+		n /= 10;
+		count++;
+	}
+	return (count);
+}
+
+int	ft_count_uint(unsigned int n)
+{
+	long int count = 0;
+
+	if (n == 0)
+		return (1);
+	while (n != 0)
+	{
+		n /= 10;
+		count++;
 	}
 	return (count);
 }

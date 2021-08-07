@@ -6,14 +6,12 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 14:02:39 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/08/06 12:11:27 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/08/07 10:18:04 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 #define FT_PRINTF_H
-#define TRUE 0
-#define FALSE 1
 
 #include "../libft/libft.h"
 #include <stddef.h>
@@ -27,21 +25,23 @@
 // FT_PRINTF.C
 int		ft_printf(const char *, ...);
 // PARSE.C
-int	parse_format_specifiers(char flag, va_list args_lst);
+int		parse_format_specifiers(char flag, va_list args_lst);
 // PRINT CHARACTERS.C
-int	print_percentage(void);
-int	print_character(va_list arg);
-int	print_string(va_list arg);
+int		print_percentage(void);
+int		print_character(va_list arg);
+int		print_string(va_list arg);
 // PRINT NUMBERS.C
-int	print_d(va_list arg);
-int	print_i(va_list arg);
-int	print_u(va_list arg);
-int	print_x(va_list arg);
-int	print_upp_x(va_list arg);
+int		print_d(va_list arg);
+int		print_i(va_list arg);
+int		print_u(va_list arg);
+int		print_x(va_list arg);
+int		print_upp_x(va_list arg);
 // PRINT ADDRESS.C
 int	print_p(va_list arg);
 // FT_PRINTF_UTILS.C
-int	ft_putnbr_uint(unsigned int n, int fd);
-int	ft_putnbr_hexa(long int n, char *base, int fd);
-int	ft_putnbr_dec(int n, int fd);
+int		ft_putnbr_uint(unsigned int n, int fd);
+int		ft_putnbr_hexa(long int n, char *base, int fd);
+void	ft_putnbr_dec(int n, int fd);
+int		ft_count_dec(int n);
+int		ft_count_uint(unsigned int n);
 #endif
