@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marine <marine@student.42.fr>              +#+  +:+       +#+        */
+/*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/02 14:55:03 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/08/04 20:34:34 by marine           ###   ########.fr       */
+/*   Updated: 2021/08/07 13:21:55 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char *new_string;
-	size_t i;
-	size_t size;
-	size_t index;
+	char	*new_string;
+	size_t	i;
+	size_t	size;
+	size_t	index;
 
 	if (*s == '\0')
 		return (NULL);
