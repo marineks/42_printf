@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 14:04:53 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/08/07 09:21:35 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/08/07 09:34:47 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,18 @@ int main(void)
 	int ct_printf = (ft_printf("Bonjour ceci est un test sans flag\n"));
 	int v_printf = (printf("Bonjour ceci est un test sans flag\n"));
 	check(ct_printf, v_printf);
+
+
+	printf("\e[0;33m---------------------------------\n");
+	printf("      Tests for \e[0;35mevery\e[0;33m  flags     \n");
+	printf("---------------------------------\e[0m\n");
+	char *phrase;
+	phrase = "phrase";
+	int count_printf = ft_printf("Tests d'une longue %s de %c lignes pour \ntester les %d flags %% (ou est-ce %i?), sachant que 42 fait %x (%X)\n\n", phrase, 'x', 9, 10, 42, 42);
+	ft_printf("Compteur de la fausse : %d\n\n", count_printf);
+	int vrai_printf = printf("Tests d'une longue %s de %c lignes pour \ntester les %d flags %% (ou est-ce %i?), sachant que 42 fait %x (%X)\n\n", phrase, 'x', 9, 10, 42, 42);
+	printf("Compteur de la vraie : %d\n", vrai_printf);
+	check(count_printf, vrai_printf);
 
 
 	printf("\e[0;33m---------------------------------\n");
@@ -258,38 +270,27 @@ int main(void)
 	printf("---------------------------------\e[0m\n");
 	char *ptr_test = NULL;
 	int p1 = ft_printf("Test NULL address |%p|\n", ptr_test);
-	int p1_true = printf("Test NULL address |%p|\n\n", ptr_test);
+	int p1_true = printf("Test NULL address |%p|\n", ptr_test);
 	check(p1, p1_true);
 
 	char *test2 = "Test123*";
 	char *ptr_test2 = test2;
 	int p2 = ft_printf("Test str address |%p|\n", ptr_test2);
-	int p2_true = printf("Test str address |%p|\n\n", ptr_test2);
+	int p2_true = printf("Test str address |%p|\n", ptr_test2);
 	check(p2, p2_true);
 
 	int test3 = 1;
 	int *ptr_test3 = &test3;
 	int p3 = ft_printf("Test int address |%p|\n", ptr_test3);
-	int p3_true = printf("Test int address |%p|\n\n", ptr_test3);
+	int p3_true = printf("Test int address |%p|\n", ptr_test3);
 	check(p3, p3_true);
 
 	char test4 = 'a';
 	char *ptr_test4 = &test4;
 	int p4 = ft_printf("Test char address |%p|\n", ptr_test4);
-	int p4_true = printf("Test char address |%p|\n\n\n", ptr_test4);
+	int p4_true = printf("Test char address |%p|\n", ptr_test4);
 	check(p4, p4_true);
 
-
-	printf("\e[0;33m---------------------------------\n");
-	printf("      Tests for \e[0;35mevery\e[0;33m  flags     \n");
-	printf("---------------------------------\e[0m\n");
-	char *phrase;
-	phrase = "phrase";
-	int count_printf = ft_printf("Tests d'une longue %s de %c lignes pour \ntester les %d flags %% (ou est-ce %i?), sachant que 42 fait %x (%X)\n\n", phrase, 'x', 9, 10, 42, 42);
-	ft_printf("Compteur de la fausse : %d\n\n", count_printf);
-	int vrai_printf = printf("Tests d'une longue %s de %c lignes pour \ntester les %d flags %% (ou est-ce %i?), sachant que 42 fait %x (%X)\n\n", phrase, 'x', 9, 10, 42, 42);
-	printf("Compteur de la vraie : %d\n", vrai_printf);
-	check(count_printf, vrai_printf);
 
 	return (0);
 }
