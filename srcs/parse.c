@@ -6,16 +6,17 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 18:01:02 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/08/06 14:34:48 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/08/07 11:47:03 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int parse_format_specifiers(char flag, va_list args_lst)
+int	parse_fmt_specifiers(char flag, va_list args_lst)
 {
-	int spe_count = 0;
+	int	spe_count;
 
+	spe_count = 0;
 	if (flag == '%')
 		spe_count = print_percentage();
 	else if (flag == 'c')
