@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 14:04:53 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/08/07 11:22:29 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/08/07 11:35:32 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void checkLeaks(void)
 
 int main(void)
 {
+
 	printf("\e[0;33m---------------------------------\n");
 	printf("        Tests with \e[0;35mno\e[0;33m flags      \n");
 	printf("---------------------------------\e[0m\n");
@@ -328,29 +329,3 @@ int main(void)
 	atexit(checkLeaks);
 	return (0);
 }
-
-// int	main(void)
-// {
-// 	printf(" PRINTF CUSTOM TESTER\n\n");
-
-// 	printf("---------------------------------");
-// 	printf("    Tests for handling errors    ");
-// 	printf("---------------------------------\nMa fonction :");
-// 	// NO SECOND ARGUMENT
-// 	ft_printf("%c\n", );
-// 	printf("Vraie fonction :");
-// 	printf("%c\n", );
-// 	printf("---------------------------------\nMa fonction :");
-// 	// EMPTY STRING FOR FIRST ARGUMENT
-// 	ft_printf("", 1);
-// 	printf("Vraie fonction :");
-// 	printf("", 1);
-// 	printf("---------------------------------\nMa fonction :");
-// 	// WRONG FLAG
-// 	ft_printf("%r\n", '1');
-// 	printf("Vraie fonction :");
-// 	printf("%r\n", '1');
-// 	printf("---------------------------------");
-
-// 	return (0);
-// }
