@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 14:04:53 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/08/07 10:22:26 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/08/07 11:22:29 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -269,6 +269,7 @@ int main(void)
 	check(upp_x10, upp_x10_true);
 
 
+
 	printf("\e[0;33m---------------------------------\n");
 	printf("          Tests for \e[0;35m%%p\e[0;33m         \n");
 	printf("---------------------------------\e[0m\n");
@@ -295,6 +296,35 @@ int main(void)
 	int p4_true = printf("Test char address |%p|\n", ptr_test4);
 	check(p4, p4_true);
 
+	int test5 = -1;
+	int* ptr_test5 = &test5;
+	int p5 = ft_printf("Test neg int address |%p|\n", ptr_test5);
+	int p5_true = printf("Test neg int address |%p|\n", ptr_test5);
+	check(p5, p5_true);
+
+	long int ptr_test6 = LONG_MIN;
+	int p6 = ft_printf("Test long min address |%p|\n", &ptr_test6);
+	int p6_true = printf("Test long min address |%p|\n", &ptr_test6);
+	check(p6, p6_true);
+
+	long int ptr_test7 = LONG_MAX;
+	int p7 = ft_printf("Test long max address |%p|\n", &ptr_test7);
+	int p7_true = printf("Test long max address |%p|\n", &ptr_test7);
+	check(p7, p7_true);
+
+	unsigned long int ptr_test8 = -ULONG_MAX;
+	int p8 = ft_printf("Test ulong min address |%p|\n", &ptr_test8);
+	int p8_true = printf("Test ulong min address |%p|\n", &ptr_test8);
+	check(p8, p8_true);
+
+	unsigned long int ptr_test9 = ULONG_MAX;
+	int p9 = ft_printf("Test ulong max address |%p|\n", &ptr_test9);
+	int p9_true = printf("Test ulong max address |%p|\n", &ptr_test9);
+	check(p9, p9_true);
+
+	ft_printf("This %p is even stranger\n", (void *)-1);
+	printf("This %p is even stranger\n\n", (void *)-1);
+	
 	atexit(checkLeaks);
 	return (0);
 }

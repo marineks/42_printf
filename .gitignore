@@ -52,3 +52,5 @@ Mkfile.old
 dkms.conf
 .gitignore
 test.c
+ft_printf_tester/
+printfTester/
