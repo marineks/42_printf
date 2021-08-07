@@ -6,26 +6,26 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 14:02:39 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/08/07 11:29:46 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/08/07 12:00:08 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
-#define FT_PRINTF_H
+# define FT_PRINTF_H
 
-#include "../libft/libft.h"
-#include <stddef.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <stdarg.h>
-#include <stdio.h>
-#include <limits.h>
-#include <stdint.h>
+# include "../libft/libft.h"
+# include <stddef.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <stdarg.h>
+# include <stdio.h>
+# include <limits.h>
+# include <stdint.h>
 
 // FT_PRINTF.C
-int		ft_printf(const char *, ...);
+int		ft_printf(const char *flag_lst, ...);
 // PARSE.C
-int		parse_format_specifiers(char flag, va_list args_lst);
+int		parse_fmt_specifiers(char flag, va_list args_lst);
 // PRINT CHARACTERS.C
 int		print_percentage(void);
 int		print_character(va_list arg);
