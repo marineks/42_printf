@@ -6,7 +6,7 @@
 /*   By: msanjuan <msanjuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/02 14:04:53 by msanjuan          #+#    #+#             */
-/*   Updated: 2021/08/07 11:35:32 by msanjuan         ###   ########.fr       */
+/*   Updated: 2021/08/09 18:47:23 by msanjuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,15 @@
 #include <stdio.h>
 #include <limits.h>
 
+#define RED "\e[0;31m"
+#define GRN "\e[0;32m"
+#define YEL "\e[0;33m"
+#define MAG "\e[0;35m"
+#define RESET "\e[0m"
+
 void check(int a, int b)
 {
-	a == b ? printf("\e[0;32mOK.\e[0m (%d | Vrai: %d)\n\n", a, b) : printf("\e[0;31mKO.\e[0m(%d |Vrai: %d)\n\n", a, b);
+	a == b ? printf(GRN "OK.\e[0m (%d | Vrai: %d)\n\n", a, b) : printf(RED "KO.\e[0m(%d |Vrai: %d)\n\n", a, b);
 }
 void checkLeaks(void)
 {
@@ -26,7 +32,7 @@ void checkLeaks(void)
 int main(void)
 {
 
-	printf("\e[0;33m---------------------------------\n");
+	printf(YEL "---------------------------------\n");
 	printf("        Tests with \e[0;35mno\e[0;33m flags      \n");
 	printf("---------------------------------\e[0m\n");
 	int ct_printf = (ft_printf("Bonjour ceci est un test sans flag\n"));
@@ -34,7 +40,7 @@ int main(void)
 	check(ct_printf, v_printf);
 
 
-	printf("\e[0;33m---------------------------------\n");
+	printf(YEL "---------------------------------\n");
 	printf("      Tests for \e[0;35mevery\e[0;33m  flags     \n");
 	printf("---------------------------------\e[0m\n");
 	char *phrase;
@@ -46,7 +52,7 @@ int main(void)
 	check(count_printf, vrai_printf);
 
 
-	printf("\e[0;33m---------------------------------\n");
+	printf(YEL "---------------------------------\n");
 	printf("          Tests for \e[0;35m%%c\e[0;33m          \n");
 	printf("---------------------------------\e[0m\n");
 	int c1 = ft_printf("Test |%c|\n", 'j');
@@ -58,14 +64,14 @@ int main(void)
 	check(c2, c2_true);
 
 
-	printf("\e[0;33m---------------------------------\n");
+	printf(YEL "---------------------------------\n");
 	printf("          Tests for \e[0;35m%%%%\e[0;33m         \n");
 	printf("---------------------------------\e[0m\n");
 	int percent_count = ft_printf("Test |%%|\n");
 	int true_percent_count = printf("Test |%%|\n");
 	check(percent_count, true_percent_count);
 
-	printf("\e[0;33m---------------------------------\n");
+	printf(YEL "---------------------------------\n");
 	printf("          Tests for \e[0;35m%%s\e[0;33m         \n");
 	printf("---------------------------------\e[0m\n");
 	char *null_test = NULL;
@@ -91,7 +97,7 @@ int main(void)
 	check(s5, s5_true);
 
 
-	printf("\e[0;33m---------------------------------\n");
+	printf(YEL "---------------------------------\n");
 	printf("          Tests for \e[0;35m%%d\e[0;33m         \n");
 	printf("---------------------------------\e[0m\n");
 	int int_test = 0;
@@ -119,7 +125,7 @@ int main(void)
 	int d5_true = printf("Test %d\n", int_test4);
 	check(d5, d5_true);
 
-	printf("\e[0;33m---------------------------------\n");
+	printf(YEL "---------------------------------\n");
 	printf("         Tests for \e[0;35m%%i\e[0;33m         \n");
 	printf("---------------------------------\e[0m\n");
 	int int_test5 = 0;
@@ -143,7 +149,7 @@ int main(void)
 	check(i4, i4_true);
 
 
-	printf("\e[0;33m---------------------------------\n");
+	printf(YEL "---------------------------------\n");
 	printf("          Tests for \e[0;35m%%u\e[0;33m         \n");
 	printf("---------------------------------\e[0m\n");
 	unsigned int int_test9 = 0;
@@ -162,7 +168,7 @@ int main(void)
 	check(u3, u3_true);
 
 
-	printf("\e[0;33m---------------------------------\n");
+	printf(YEL "---------------------------------\n");
 	printf("          Tests for \e[0;35m%%x\e[0;33m         \n");
 	printf("---------------------------------\e[0m\n");
 	int int_test13 = 0;
@@ -216,7 +222,7 @@ int main(void)
 	check(x10, x10_true);
 
 
-	printf("\e[0;33m---------------------------------\n");
+	printf(YEL "---------------------------------\n");
 	printf("          Tests for \e[0;35m%%X\e[0;33m         \n");
 	printf("---------------------------------\e[0m\n");
 	int int_test23 = 0;
@@ -271,7 +277,7 @@ int main(void)
 
 
 
-	printf("\e[0;33m---------------------------------\n");
+	printf(YEL "---------------------------------\n");
 	printf("          Tests for \e[0;35m%%p\e[0;33m         \n");
 	printf("---------------------------------\e[0m\n");
 	char *ptr_test = NULL;
